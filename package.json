@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "NODE_ENV=dev && node app.js",
+      "test": "mocha --timeout 10000"
   },
   "author": "qyu software development",
   "license": "ISC",
@@ -18,5 +19,10 @@
     "mongoose": "^4.9.6",
     "morgan": "^1.8.1",
     "passport": "^0.3.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.3.0"
   }
 }

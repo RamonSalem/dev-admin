@@ -5,7 +5,7 @@ const Ddos = require('ddos')
 const logger = require('morgan');
 const chalk = require('chalk');
 //const socket = require('./app/utils/socket');
-
+const config = require('config');
 
 const bodyParser= require('body-parser');
 const cookieSession = require('cookie-session');
@@ -27,15 +27,20 @@ app.use(cookieSession({
   maxAge: 20000
 }))
 
-
 app.use(cors());
-app.use(logger('common'));
+// app.use(logger('common'));
+//don't show the log when it is test
+if(config.util.getEnv('NODE_ENV') !== 'test') {
+    //use morgan to log at command line
+    app.use(logger('combined')); //'combined' outputs the Apache style LOGs
+}
 app.use('/',server);
 
 const serverIO = app.listen(process.env.PORT || 3000 ,()=>{
 	console.log(chalk.green('✓')+' running on port 3000');
 })
 
+module.exports = app; // for testing
 /*
 const socketIO = require('socket.io');
 const io = socketIO(serverIO);
