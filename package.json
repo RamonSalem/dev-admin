@@ -2,10 +2,21 @@
   "name": "dev-admin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "qyu software development",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "chalk": "^1.1.3",
+    "cookie-session": "^2.0.0-beta.1",
+    "cors": "^2.8.3",
+    "ddos": "^0.1.16",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.6",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2"
+  }
 }
