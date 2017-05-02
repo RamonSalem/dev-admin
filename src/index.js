@@ -9,7 +9,12 @@ const employeeRoutes = require('./employee/employee.routes');
 const postRoutes = require('./post/post.routes');
 const systemRoutes = require('./system/system.routes');
 
+
+
 const mongoose =   require('mongoose');
+
+mongoose.Promise = global.Promise;
+
 const db   =   require('../config/db.connect').connect();
 
 //

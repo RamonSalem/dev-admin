@@ -3,11 +3,10 @@ const mongoose = require('mongoose');
 //Only posts with type "global" should be in collection Post
 
 const schema = new mongoose.Schema({
-    title : String,
+    title : {type : String, required : true},
     tags : [{type : String}],
-    description : String,
-    registrationDate : Date,
-    postedBy : String,
+    description : {type : String, required : true},
+    postedBy : {type : String, required : true},
     postDate : Date,
 
     type: {
@@ -17,4 +16,4 @@ const schema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.Model('Post', schema);
+module.exports = mongoose.model('Post', schema);
